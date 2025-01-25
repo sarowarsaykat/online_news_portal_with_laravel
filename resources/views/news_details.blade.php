@@ -82,6 +82,9 @@
                                         @endforeach
                                     </div>
                                     <div id="latest" class="container tab-pane fade">
+                                        <?php
+                                        $latest_news = App\Http\Controllers\MyController::latestNews();
+                                        ?>
                                         @foreach ($latest_news as $latest)
                                             <div class="tn-news">
                                                 <div class="tn-img">

@@ -21,7 +21,6 @@ class HomeController extends Controller
         $data = [
             'sliders' => News::where('slider', 1)->latest()->take(5)->get(),
             'readNews' => News::orderBy('id', 'DESC')->take(9)->get(),
-            'latest_news' => News::latest()->take(3)->get(),
         ];
 
         return view('home', $data);
@@ -48,7 +47,6 @@ class HomeController extends Controller
                 ->where('id', '!=', $news->id)
                 ->take(6)
                 ->get(),
-            'latest_news' => News::latest()->take(5)->get(),
         ];
 
         return view('news_details', $data);

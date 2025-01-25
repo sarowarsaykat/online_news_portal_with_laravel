@@ -15,4 +15,9 @@ class MyController extends Controller
        $popular_news=  News::orderBy('views', 'desc')->take(5)->get();
        return $popular_news;
     }
+
+    public static function latestNews(){
+        $latest_news=  News::latest()->take(5)->get();
+        return $latest_news;
+     }
 }

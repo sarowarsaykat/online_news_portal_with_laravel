@@ -71,7 +71,7 @@
                     <div class="b-search d-flex">
                         <!-- Search Form -->
                         <form action="{{ route('news.search') }}" method="GET" class="d-flex w-100">
-                            <input type="text" name="query" class="form-control" placeholder="Search News or Category" required>
+                            <input type="text" name="query" class="form-control" placeholder="Search News" required>
                             <button type="submit" class="btn btn-primary ml-2">
                                 <i class="fa fa-search"></i>
                             </button>

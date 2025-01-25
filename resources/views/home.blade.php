@@ -72,7 +72,7 @@
                             <?php
                             $popular_news = App\Http\Controllers\MyController::popularNews();
                             ?>
-                            @foreach ($popular_news as $popular)
+                            @foreach ($popular_news->take(3) as $popular)
                                 <div class="tn-news">
                                     <div class="tn-img">
                                         <img src="{{ asset('uploads/news/' . $popular->image) }}" />
@@ -85,7 +85,10 @@
                             @endforeach
                         </div>
                         <div id="latest" class="container tab-pane fade">
-                            @foreach ($latest_news as $latest)
+                            <?php
+                            $latest_news = App\Http\Controllers\MyController::latestNews();
+                            ?>
+                            @foreach ($latest_news->take(3) as $latest)
                                 <div class="tn-news">
                                     <div class="tn-img">
                                         <img src="{{ asset('uploads/news/' . $latest->image) }}" />
